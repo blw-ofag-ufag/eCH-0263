@@ -22,6 +22,9 @@
 *.txt text
 *.xml text
 *.xsd text
+*.svrl text
+*.sch text
+*.sch text
 *.kotlin text
 *.ceylon text
 *.scala text
