@@ -139,7 +139,7 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="manureRecycling-ProductCategory">
+			<xs:element name="manureRecyclingProductCategory">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Hof- und Recyclingdünger-Produktkategorie</xs:documentation>
 				</xs:annotation>
