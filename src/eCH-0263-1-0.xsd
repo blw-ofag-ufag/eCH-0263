@@ -170,7 +170,7 @@ Datum				Version				Autor
 				<xs:simpleType>
 					<xs:restriction base="eCH-0261:unitType">
 						<xs:enumeration value="kg"/>
-						<xs:enumeration value="l"/>
+						<xs:enumeration value="m3"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -298,7 +298,7 @@ Falls ein Eintrag nicht mehr existiert/geändert wurde, wird er mit dem Datum bi
 				<xs:simpleType>
 					<xs:restriction base="eCH-0261:unitType">
 						<xs:enumeration value="kg"/>
-						<xs:enumeration value="l"/>
+						<xs:enumeration value="m3"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -436,7 +436,7 @@ Referenziert einen Code einer Spezies, welcher durch «taxonomySpecies» aus eCH
 				<xs:simpleType>
 					<xs:restriction base="eCH-0261:unitType">
 						<xs:enumeration value="kg"/>
-						<xs:enumeration value="l"/>
+						<xs:enumeration value="m3"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -629,7 +629,7 @@ Dichte in kg/m3, falls «kg» als Transaktionseinheit (transactionUnit) des übe
 				<xs:simpleType>
 					<xs:restriction base="eCH-0261:unitType">
 						<xs:enumeration value="%"/>
-						<xs:enumeration value="kg/l"/>
+						<xs:enumeration value="kg/m3"/>
 						<xs:enumeration value="kg/pc"/>
 					</xs:restriction>
 				</xs:simpleType>
