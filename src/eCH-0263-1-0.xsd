@@ -618,7 +618,7 @@ Dichte in kg/m3, falls «kg» als Transaktionseinheit (transactionUnit) des übe
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:decimal">
-						<xs:fractionDigits value="2"/>
+						<xs:fractionDigits value="3"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
