@@ -87,7 +87,7 @@ Datum				Version				Autor
 				<xs:simpleType>
 					<xs:restriction base="eCH-0261:unitType">
 						<xs:enumeration value="kg"/>
-						<xs:enumeration value="l"/>
+						<xs:enumeration value="m3"/>
 						<xs:enumeration value="pc"/>
 					</xs:restriction>
 				</xs:simpleType>
