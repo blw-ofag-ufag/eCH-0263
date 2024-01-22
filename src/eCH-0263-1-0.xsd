@@ -139,7 +139,7 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="manureRecycling-ProductCategory">
+			<xs:element name="manureRecyclingProductCategory">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Hof- und Recyclingdünger-Produktkategorie</xs:documentation>
 				</xs:annotation>
@@ -158,7 +158,7 @@ Datum				Version				Autor
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="typeOfManureRe-cyclingProduct" type="eCH-0263:typeOfManureRecyclingProductType" minOccurs="0">
+			<xs:element name="typeOfManureRecyclingProduct" type="eCH-0263:typeOfManureRecyclingProductType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Produkttyp</xs:documentation>
 				</xs:annotation>
@@ -373,7 +373,7 @@ Falls ein Eintrag nicht mehr existiert/geändert wurde, wird er mit dem Datum bi
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="feedstuffPro-ductType" type="eCH-0263:feedstuffProductTypeType">
+			<xs:element name="feedstuffProductType" type="eCH-0263:feedstuffProductTypeType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Produkttyp</xs:documentation>
 				</xs:annotation>
