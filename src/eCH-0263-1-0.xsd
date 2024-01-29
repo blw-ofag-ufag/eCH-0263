@@ -38,7 +38,7 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Zulassung für Privatanwender</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="plantProtectionProductCategory" type="eCH-0263:plantProtectionProductCategoryType">
+			<xs:element name="plantProtectionProductCategory" type="eCH-0263:plantProtectionProductCategoryType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Pflanzenschutzmittel-Produktkategorie</xs:documentation>
 				</xs:annotation>
