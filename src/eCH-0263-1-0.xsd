@@ -33,10 +33,29 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="privateUsageAdmissable" type="xs:boolean">
+			<xs:element name="usageCategory">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Zulassung für Privatanwender</xs:documentation>
 				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:enumeration value="STANDARD">
+							<xs:annotation>
+								<xs:documentation xml:lang="de">Standardprodukt</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="FACILITY_SPECIFIC">
+							<xs:annotation>
+								<xs:documentation xml:lang="de">Betriebsspezifisches Produkt </xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="META_PRODUCT">
+							<xs:annotation>
+								<xs:documentation xml:lang="de">Metaprodukt</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
 			</xs:element>
 			<xs:element name="plantProtectionProductCategory" type="eCH-0263:plantProtectionProductCategoryType" maxOccurs="unbounded">
 				<xs:annotation>
@@ -76,11 +95,6 @@ Datum				Version				Autor
 						<xs:enumeration value="pc"/>
 					</xs:restriction>
 				</xs:simpleType>
-			</xs:element>
-			<xs:element name="density" type="xs:decimal" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation xml:lang="de">Dichte (Raumgewicht) in kg/m3. Die Dichte muss zwingend angegeben werden, falls «Kubikmeter» als Transaktionseinheit (transactionUnit) angegeben wird.</xs:documentation>
-				</xs:annotation>
 			</xs:element>
 			<xs:element name="approvalDate" type="xs:date">
 				<xs:annotation>
@@ -282,7 +296,7 @@ Datum				Version				Autor
 						<xs:documentation xml:lang="de">TO DO! Anja fragen</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="fertiliserProductCategory2" type="eCH-0263:fertiliserProductCategoryType">
+				<xs:element name="fertiliserProductCategoryPre2024" type="eCH-0263:fertiliserProductCategoryPre2024Type">
 					<xs:annotation>
 						<xs:documentation xml:lang="de">TO DO! Anja fragen</xs:documentation>
 					</xs:annotation>
@@ -562,7 +576,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 						<xs:documentation xml:lang="de">Saatbehandlung</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="ingredient" type="eCH-0261:identifierType" maxOccurs="unbounded">
+				<xs:element name="ingredient" type="eCH-0263:ingredientType" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation xml:lang="de">Inhaltsstoffe</xs:documentation>
 					</xs:annotation>
@@ -644,12 +658,12 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 			<xs:documentation xml:lang="de">Inhaltsstoff (Zusammensetzungen) </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="id" type="eCH-0261:identifierType">
+			<xs:element name="id" type="eCH-0261:identifierType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="descriptor" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
@@ -745,12 +759,12 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 			<xs:documentation xml:lang="de">Inhaltsstoff (Zusammensetzungen) </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="id" type="eCH-0261:identifierType">
+			<xs:element name="id" type="eCH-0261:identifierType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="descriptor" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
@@ -1008,7 +1022,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="waitingPeriod" type="xs:positiveInteger" minOccurs="0">
+			<xs:element name="waitingPeriodDays" type="xs:positiveInteger" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Wartefrist in Tagen</xs:documentation>
 				</xs:annotation>
@@ -1055,12 +1069,12 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Einheit</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="botanicalPlant" type="eCH-0265:botanicalPlantType" maxOccurs="unbounded">
+			<xs:element name="botanicalPlant" type="eCH-0261:identifierType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Kultur</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="pathogen" type="eCH-0263:pathogenType" maxOccurs="unbounded">
+			<xs:element name="pathogen" type="eCH-0261:identifierType" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Schaderreger</xs:documentation>
 				</xs:annotation>
@@ -1102,7 +1116,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 			<xs:choice>
 				<xs:element name="animalSource" type="eCH-0261:identifierType">
 					<xs:annotation>
-						<xs:documentation xml:lang="de">Angabe eines Tiers (Code einer Spezies, welcher durch «taxonomySpecies» aus eCH-0266 definiert wird), falls der Mist tierischer Herkunft ist.</xs:documentation>
+						<xs:documentation xml:lang="de">Angabe eines Tiers (Code einer Spezies, welcher durch «zoologicalSpecies» aus eCH-0266 definiert wird), falls der Mist tierischer Herkunft ist.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="otherSource" type="eCH-0261:identifierType">
@@ -1165,6 +1179,14 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 	<xs:complexType name="fertiliserProductCategoryType">
 		<xs:annotation>
 			<xs:documentation xml:lang="de">Produktkategorie Dünger</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="item" type="eCH-0261:enumeratedItemType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fertiliserProductCategoryPre2024Type">
+		<xs:annotation>
+			<xs:documentation xml:lang="de">Produktkategorie Dünger gemäss DüV vor 2024</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="item" type="eCH-0261:enumeratedItemType"/>
