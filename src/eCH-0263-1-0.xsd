@@ -28,7 +28,7 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Zusätzliche Identifikatoren (z.B. W-Nummer)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
@@ -54,7 +54,7 @@ Datum				Version				Autor
 						<xs:documentation xml:lang="de">Bewilligungsinhaber (UID)</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="permissionHolderAdress" type="eCH-0010:organisationMailAddressType">
+				<xs:element name="permissionHolderAddress" type="eCH-0010:organisationMailAddressType">
 					<xs:annotation>
 						<xs:documentation xml:lang="de">Bewilligungsinhaber (wenn UID unbekannt)</xs:documentation>
 					</xs:annotation>
@@ -106,7 +106,7 @@ Datum				Version				Autor
 	</xs:complexType>
 	<xs:complexType name="manureRecyclingProductType">
 		<xs:annotation>
-			<xs:documentation xml:lang="de">Hof- und Recyclingdünger </xs:documentation>
+			<xs:documentation xml:lang="de">Hof- und Recyclingdünger</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="id" type="eCH-0261:identifierType">
@@ -119,12 +119,12 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Zusätzliche Identifikatoren</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="typeOfProduct ">
+			<xs:element name="typeOfProduct">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Angabe, ob es sich um ein Standardprodukt, ein betriebsspezifisches Produkt oder ein Metaprodukt handelt.</xs:documentation>
 				</xs:annotation>
@@ -271,7 +271,7 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Zusätzliche Identifikatoren (z.B. CPID)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
@@ -289,7 +289,7 @@ Datum				Version				Autor
 				</xs:element>
 			</xs:choice>
 			<xs:choice>
-				<xs:element name="manufacturerUID" type="eCH-0108:uidType ">
+				<xs:element name="manufacturerUID" type="eCH-0108:uidType">
 					<xs:annotation>
 						<xs:documentation xml:lang="de">Hersteller (Unternehmen mit UID)</xs:documentation>
 					</xs:annotation>
@@ -353,12 +353,12 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Zusätzliche Identifikatoren</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="typeOfProduct ">
+			<xs:element name="typeOfProduct">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Angabe, ob es sich um ein Standardpro-dukt, ein betriebsspezifisches Produkt oder ein Metaprodukt handelt.</xs:documentation>
 				</xs:annotation>
@@ -457,7 +457,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="organicRegulationConformity ">
+			<xs:element name="organicRegulationConformity">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Angabe, ob ein Futtermittel die Bio-Richtlinien des Bundes erfüllt.</xs:documentation>
 				</xs:annotation>
@@ -541,7 +541,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Zusätzliche Identifikatoren</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
@@ -649,7 +649,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
@@ -750,7 +750,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
@@ -920,7 +920,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Zusätzliche Identifikatoren</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
@@ -1077,7 +1077,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="description" type="eCH-0261:descriptorType">
+			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
