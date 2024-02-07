@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-Datum				Version				Autor
-*********************************************
-2023-05-01			Entwurf zur Eingabe bei eCH			Stl
--->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:eCH-0263="http://www.ech.ch/xmlns/eCH-0263/1" xmlns:eCH-0010="http://www.ech.ch/xmlns/eCH-0010/8" xmlns:eCH-0108="http://www.ech.ch/xmlns/eCH-0108/7" xmlns:eCH-0261="http://www.ech.ch/xmlns/eCH-0261/1" xmlns:eCH-0265="http://www.ech.ch/xmlns/eCH-0265/1" targetNamespace="http://www.ech.ch/xmlns/eCH-0263/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:eCH-0263="http://www.ech.ch/xmlns/eCH-0263/1" xmlns:eCH-0010="http://www.ech.ch/xmlns/eCH-0010/8" xmlns:eCH-0108="http://www.ech.ch/xmlns/eCH-0108/7" xmlns:eCH-0261="http://www.ech.ch/xmlns/eCH-0261/1" targetNamespace="http://www.ech.ch/xmlns/eCH-0263/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
 	<xs:annotation>
 		<xs:documentation xml:lang="de">Agrardaten - Betriebsmittel</xs:documentation>
 	</xs:annotation>
 	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0010/8" schemaLocation="http://www.ech.ch/xmlns/eCH-0010/8/eCH-0010-8-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0108/7" schemaLocation="./eCH-0108-7-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0261/1" schemaLocation="../../eCH-0261/src/eCH-0261-1-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0265/1" schemaLocation="../../eCH-0265/src/eCH-0265-1-0.xsd"/>
+	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0108/7" schemaLocation="http://www.ech.ch/xmlns/eCH-0108/7/eCH-0108-7-0.xsd"/>
+	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0261/1" schemaLocation="http://www.ech.ch/xmlns/eCH-0261/1/eCH-0261-1-0.xsd"/>
 	<!--Hauptdatentypen-->
 	<xs:complexType name="plantProtectionProductType">
 		<xs:annotation>
@@ -39,19 +33,19 @@ Datum				Version				Autor
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:token">
-						<xs:enumeration value="STANDARD">
+						<xs:enumeration value="PROFESSIONAL">
 							<xs:annotation>
-								<xs:documentation xml:lang="de">Standardprodukt</xs:documentation>
+								<xs:documentation xml:lang="de">Beruflich</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
-						<xs:enumeration value="FACILITY_SPECIFIC">
+						<xs:enumeration value="NON_PROFESSIONAL">
 							<xs:annotation>
-								<xs:documentation xml:lang="de">Betriebsspezifisches Produkt </xs:documentation>
+								<xs:documentation xml:lang="de">Nichtberuflich</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
-						<xs:enumeration value="META_PRODUCT">
+						<xs:enumeration value="BOTH">
 							<xs:annotation>
-								<xs:documentation xml:lang="de">Metaprodukt</xs:documentation>
+								<xs:documentation xml:lang="de">Beides</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
 					</xs:restriction>
@@ -101,7 +95,7 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Datum der Zulassung</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="hazardLabeling" type="eCH-0263:hazardLabelingType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="hazardLabel" type="eCH-0263:hazardLabelType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Gefahrenkennzeichnung</xs:documentation>
 				</xs:annotation>
@@ -290,15 +284,20 @@ Datum				Version				Autor
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:choice>
+			<xs:choice maxOccurs="unbounded">
 				<xs:element name="fertiliserProductCategory" type="eCH-0263:fertiliserProductCategoryType">
 					<xs:annotation>
-						<xs:documentation xml:lang="de">TO DO! Anja fragen</xs:documentation>
+						<xs:documentation xml:lang="de">Dünger-Produktkategorie welche der Product Function Category entspricht, gemäss DüV</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="fertiliserProductCategoryPre2024" type="eCH-0263:fertiliserProductCategoryPre2024Type">
 					<xs:annotation>
-						<xs:documentation xml:lang="de">TO DO! Anja fragen</xs:documentation>
+						<xs:documentation xml:lang="de">Dünger-Produktkategorie, gemäss der DüV bis 2023</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="typeOfFertiliserProductPre2024" type="eCH-0263:typeOfFertiliserProductPre2024Type">
+					<xs:annotation>
+						<xs:documentation xml:lang="de">Dünger-Produkttyp, gemäss der DüV bis 2023</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:choice>
@@ -430,7 +429,7 @@ Datum				Version				Autor
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="TypeOfFeedstuffProduct" type="eCH-0263:typeOfFeedstuffProductType">
+			<xs:element name="typeOfFeedstuffProduct" type="eCH-0263:typeOfFeedstuffProductType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Produkttyp</xs:documentation>
 				</xs:annotation>
@@ -593,12 +592,12 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="botanicalCrop" type="eCH-0265:botanicalPlantType">
+			<xs:element name="botanicalPlant" type="eCH-0261:identifierType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Kultur</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="variety" type="eCH-0265:varietyType" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="variety" type="eCH-0261:identifierType" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Sorte</xs:documentation>
 				</xs:annotation>
@@ -1091,20 +1090,15 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Identifikator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="alternateId" minOccurs="0" maxOccurs="unbounded" type="eCH-0261:identifierType">
+				<xs:annotation>
+					<xs:documentation xml:lang="de">Alternativer Identifikator, z.B. EPPO-Code oder InfoFito-Code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="descriptor" type="eCH-0261:descriptorType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Beschreibung</xs:documentation>
 				</xs:annotation>
-			</xs:element>
-			<xs:element name="eppoCode">
-				<xs:annotation>
-					<xs:documentation xml:lang="de">Referenz auf den Code aus der EPPO- Datenbank (https://gd.eppo.int/).</xs:documentation>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:token">
-						<xs:maxLength value="50"/>
-					</xs:restriction>
-				</xs:simpleType>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
@@ -1160,7 +1154,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 			<xs:element name="item" type="eCH-0261:enumeratedItemType"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="hazardLabelingType">
+	<xs:complexType name="hazardLabelType">
 		<xs:annotation>
 			<xs:documentation xml:lang="de">Gefahrenkennzeichnung</xs:documentation>
 		</xs:annotation>
@@ -1187,6 +1181,14 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 	<xs:complexType name="fertiliserProductCategoryPre2024Type">
 		<xs:annotation>
 			<xs:documentation xml:lang="de">Produktkategorie Dünger gemäss DüV vor 2024</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="item" type="eCH-0261:enumeratedItemType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="typeOfFertiliserProductPre2024Type">
+		<xs:annotation>
+			<xs:documentation xml:lang="de">Produkttyp Dünger gemäss DüV vor 2024</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="item" type="eCH-0261:enumeratedItemType"/>
