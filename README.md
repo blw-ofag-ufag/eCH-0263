@@ -1,6 +1,7 @@
 # eCH-0263: Agrardaten -- Betriebsmittel
 
-This is the repository for technical artefacts related to this specification.
+This is the repository for technical artefacts related to this specification 0263. The currently valid version is published on the eCH-Website https://www.ech.ch/de/ech/ech-0263.
+
 Primarily, this repo contains:
 
 * XSDs
