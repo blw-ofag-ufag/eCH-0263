@@ -647,6 +647,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 										<xs:restriction base="eCH-0261:unitType">
 											<xs:enumeration value="%"/>
 											<xs:enumeration value="kg/pc"/>
+											<xs:enumeration value="kg/kg"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
@@ -859,6 +860,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 											<xs:enumeration value="%"/>
 											<xs:enumeration value="kg/m3"/>
 											<xs:enumeration value="kg/pc"/>
+											<xs:enumeration value="kg/kg"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
@@ -886,6 +888,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 											<xs:enumeration value="%"/>
 											<xs:enumeration value="kg/m3"/>
 											<xs:enumeration value="kg/pc"/>
+											<xs:enumeration value="kg/kg"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
@@ -913,6 +916,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 											<xs:enumeration value="%"/>
 											<xs:enumeration value="kg/m3"/>
 											<xs:enumeration value="kg/pc"/>
+											<xs:enumeration value="kg/kg"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
