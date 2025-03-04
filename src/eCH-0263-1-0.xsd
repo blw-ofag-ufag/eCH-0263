@@ -602,6 +602,11 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Sorte</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="manufacturer" type="eCH-0108:localIdType">
+				<xs:annotation>
+					<xs:documentation xml:lang="de">BUR-Nummer des Herstellers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="validity" type="eCH-0261:validityType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Angaben zur Gültigkeitsdauer</xs:documentation>
