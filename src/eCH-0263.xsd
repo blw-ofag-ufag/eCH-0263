@@ -5,7 +5,7 @@
 	</xs:annotation>
 	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0010/8" schemaLocation="http://www.ech.ch/xmlns/eCH-0010/8/eCH-0010-8-0.xsd"/>
 	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0108/7" schemaLocation="http://www.ech.ch/xmlns/eCH-0108/7/eCH-0108-7-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0261/1" schemaLocation="http://www.ech.ch/xmlns/eCH-0261/1/eCH-0261-1-0.xsd"/>
+	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0261/1" schemaLocation="http://www.ech.ch/xmlns/eCH-0261/1/eCH-0261.xsd"/>
 	<!--Hauptdatentypen-->
 	<xs:complexType name="plantProtectionProductType">
 		<xs:annotation>
