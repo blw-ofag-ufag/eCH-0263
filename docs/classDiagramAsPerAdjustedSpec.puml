@@ -1,0 +1,82 @@
+@startuml
+title Corrections to eCH-0263 spec \n(digifluxPrroductKatalog-ish)
+
+' Define enums
+enum Substance {
+  N
+  PSO5
+  ...
+}
+
+enum MeasurementUnit {
+  kg
+  m3
+  ...
+}
+
+enum ProductType {
+  META
+  STANDARD
+  FACILITY_SPECIFIC
+}
+
+' Define abstract class
+abstract class AbstractProduct {
+  - typeOfProduct: ProductType
+}
+
+abstract class AbstractIngredient {
+}
+
+class MetaIngredient {
+  - defaultQuantity: Quantity [1]
+  - maxQuantity: Quantity [0..1]
+  - minQuantity: Quantity [0..1]
+}
+
+class Ingredient {
+  - quantity: Quantity
+}
+
+class MetaProduct {
+}
+
+class StandardProduct {
+  - parent: MetaProduct
+}
+
+class FacilitySpecificProduct {
+  - parent: StandardProduct
+}
+
+class Quantity {
+  - substance: Substance
+  - measurementUnit: MeasurementUnit
+}
+
+' Relationships
+AbstractProduct <|-- MetaProduct
+AbstractProduct <|-- StandardProduct
+AbstractProduct <|-- FacilitySpecificProduct
+
+AbstractIngredient <|-- MetaIngredient
+AbstractIngredient <|-- Ingredient
+
+MetaProduct "1" *-- "0..*" MetaIngredient
+StandardProduct "1" *-- "0..*" Ingredient
+FacilitySpecificProduct "1" *-- "0..*" Ingredient
+
+MetaProduct "1" *--[#blue] "1" StandardProduct
+
+FacilitySpecificProduct "0..*" *-- "1" StandardProduct
+
+Quantity "1" -- "1" Substance
+Quantity "1" -- "1" MeasurementUnit
+
+MetaIngredient "1" *--[#blue] "1" Quantity
+
+Ingredient "1" *-- "1" Quantity
+
+' Associate ProductType with AbstractProduct
+AbstractProduct ---> ProductType
+@enduml

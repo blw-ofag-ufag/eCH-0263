@@ -1,0 +1,84 @@
+@startuml
+title Required by current eCH-0263 spec \nSomewhat "Hoduflu-ish"
+
+' Define enums
+enum Substance {
+  N
+  PSO5
+  ...
+}
+
+enum MeasurementUnit {
+  kg
+  m3
+  ...
+}
+
+enum ProductType {
+  META
+  STANDARD
+  FACILITY_SPECIFIC
+}
+
+' Define abstract class
+abstract class AbstractProduct {
+  - typeOfProduct: ProductType
+}
+
+abstract class AbstractIngredient {
+}
+
+class MetaIngredient {
+  - defaultQuantity: Quantity [1]
+  - maxQuantity: Quantity [0..1]
+  - minQuantity: Quantity [0..1]
+}
+
+class Ingredient {
+  - quantity: Quantity
+}
+
+class MetaProduct {
+}
+
+class StandardProduct {
+  - parent: MetaProduct
+}
+
+class FacilitySpecificProduct {
+  - parent: StandardProduct
+}
+
+class Quantity {
+  - substance: Substance
+  - measurementUnit: MeasurementUnit
+}
+
+' Relationships
+AbstractProduct <|-- MetaProduct
+AbstractProduct <|-- StandardProduct
+AbstractProduct <|-- FacilitySpecificProduct
+
+AbstractIngredient <|-- MetaIngredient
+AbstractIngredient <|-- Ingredient
+
+MetaProduct "1" *-- "0..*" MetaIngredient
+StandardProduct "1" *-- "0..*" Ingredient
+FacilitySpecificProduct "1" *-- "0..*" Ingredient
+
+' Make this line red
+MetaProduct "1" *--[#red] "1<color:Red>..2" StandardProduct
+
+FacilitySpecificProduct "0..*" *-- "1" StandardProduct
+
+Quantity "1" -- "1" Substance
+Quantity "1" -- "1" MeasurementUnit
+
+' Make this line red and the comment red too
+MetaIngredient "1" *--[#red] "1<color:Red>..2" Quantity : <color:Red>Hoduflu-ish</color>
+
+Ingredient "1" *-- "1" Quantity
+
+' Associate ProductType with AbstractProduct
+AbstractProduct ---> ProductType
+@enduml
