@@ -1,5 +1,5 @@
 @startuml
-title Corrections to eCH-0263 spec \n(digifluxPrroductKatalog-ish)
+title Recommendations for eCH-0263 Standard/digiflux\n\nCombined Conceptual Model\nChanges in Blue
 
 ' Define enums
 enum Substance {
@@ -14,15 +14,10 @@ enum MeasurementUnit {
   ...
 }
 
-enum ProductType {
-  META
-  STANDARD
-  FACILITY_SPECIFIC
-}
 
 ' Define abstract class
 abstract class AbstractProduct {
-  - typeOfProduct: ProductType
+  
 }
 
 abstract class AbstractIngredient {
@@ -75,8 +70,6 @@ Quantity "1" -- "1" MeasurementUnit
 
 MetaIngredient "1" *--[#blue] "1" Quantity
 
-Ingredient "1" *-- "1" Quantity
+Ingredient "1" *--[#blue]"      1-2 (PSM only)\n1 (all others)"  Quantity
 
-' Associate ProductType with AbstractProduct
-AbstractProduct ---> ProductType
 @enduml
