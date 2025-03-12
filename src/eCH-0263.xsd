@@ -736,7 +736,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					</xs:complexType>
 				</xs:element>
 			</xs:choice>
-			<xs:element name="quantity" maxOccurs="2">
+			<xs:element name="quantity">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Menge mit zugehörender Einheit der verwendeten Substanz. </xs:documentation>
 				</xs:annotation>
@@ -853,88 +853,106 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Angabe, ob dieser Inhaltsstoff gemäss einer bestehenden Verordnung zwingend angegeben werden muss. Das Element ist bei einem Standardprodukt/Metaprodukt von Interesse.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="minQuantity" maxOccurs="2">
+			<xs:element name="minQuantity">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Minimalmenge</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
-					<xs:complexContent>
-						<xs:restriction base="eCH-0263:measurementType">
-							<xs:sequence>
-								<xs:element name="value">
-									<xs:simpleType>
-										<xs:restriction base="xs:decimal"/>
-									</xs:simpleType>
-								</xs:element>
-								<xs:element name="unit">
-									<xs:simpleType>
-										<xs:restriction base="eCH-0261:unitType">
-											<xs:enumeration value="%"/>
-											<xs:enumeration value="kg/m3"/>
-											<xs:enumeration value="kg/pc"/>
-											<xs:enumeration value="kg/kg"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-							</xs:sequence>
-						</xs:restriction>
-					</xs:complexContent>
+					<xs:sequence>
+						<xs:element name="measurements" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:restriction base="eCH-0263:measurementType">
+										<xs:sequence>
+											<xs:element name="value">
+												<xs:simpleType>
+													<xs:restriction base="xs:decimal"/>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="unit">
+												<xs:simpleType>
+													<xs:restriction base="eCH-0261:unitType">
+														<xs:enumeration value="%"/>
+														<xs:enumeration value="kg/m3"/>
+														<xs:enumeration value="kg/pc"/>
+														<xs:enumeration value="kg/kg"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+										</xs:sequence>
+									</xs:restriction>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="maxQuantity" maxOccurs="2">
+			<xs:element name="maxQuantity">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Minimalmenge</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
-					<xs:complexContent>
-						<xs:restriction base="eCH-0263:measurementType">
-							<xs:sequence>
-								<xs:element name="value">
-									<xs:simpleType>
-										<xs:restriction base="xs:decimal"/>
-									</xs:simpleType>
-								</xs:element>
-								<xs:element name="unit">
-									<xs:simpleType>
-										<xs:restriction base="eCH-0261:unitType">
-											<xs:enumeration value="%"/>
-											<xs:enumeration value="kg/m3"/>
-											<xs:enumeration value="kg/pc"/>
-											<xs:enumeration value="kg/kg"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-							</xs:sequence>
-						</xs:restriction>
-					</xs:complexContent>
+					<xs:sequence>
+						<xs:element name="measurements" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:restriction base="eCH-0263:measurementType">
+										<xs:sequence>
+											<xs:element name="value">
+												<xs:simpleType>
+													<xs:restriction base="xs:decimal"/>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="unit">
+												<xs:simpleType>
+													<xs:restriction base="eCH-0261:unitType">
+														<xs:enumeration value="%"/>
+														<xs:enumeration value="kg/m3"/>
+														<xs:enumeration value="kg/pc"/>
+														<xs:enumeration value="kg/kg"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+										</xs:sequence>
+									</xs:restriction>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="defaultQuantity" maxOccurs="2">
+			<xs:element name="defaultQuantity">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Minimalmenge</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
-					<xs:complexContent>
-						<xs:restriction base="eCH-0263:measurementType">
-							<xs:sequence>
-								<xs:element name="value">
-									<xs:simpleType>
-										<xs:restriction base="xs:decimal"/>
-									</xs:simpleType>
-								</xs:element>
-								<xs:element name="unit">
-									<xs:simpleType>
-										<xs:restriction base="eCH-0261:unitType">
-											<xs:enumeration value="%"/>
-											<xs:enumeration value="kg/m3"/>
-											<xs:enumeration value="kg/pc"/>
-											<xs:enumeration value="kg/kg"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-							</xs:sequence>
-						</xs:restriction>
-					</xs:complexContent>
+					<xs:sequence>
+						<xs:element name="measurements" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:restriction base="eCH-0263:measurementType">
+										<xs:sequence>
+											<xs:element name="value">
+												<xs:simpleType>
+													<xs:restriction base="xs:decimal"/>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="unit">
+												<xs:simpleType>
+													<xs:restriction base="eCH-0261:unitType">
+														<xs:enumeration value="%"/>
+														<xs:enumeration value="kg/m3"/>
+														<xs:enumeration value="kg/pc"/>
+														<xs:enumeration value="kg/kg"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+										</xs:sequence>
+									</xs:restriction>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
