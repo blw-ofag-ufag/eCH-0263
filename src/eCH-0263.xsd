@@ -634,26 +634,32 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Menge mit zugehörender Einheit des verwendeten Pflanzenschutzmittels.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
-					<xs:complexContent>
-						<xs:restriction base="eCH-0263:measurementType">
-							<xs:sequence>
-								<xs:element name="value">
-									<xs:simpleType>
-										<xs:restriction base="xs:decimal"/>
-									</xs:simpleType>
-								</xs:element>
-								<xs:element name="unit">
-									<xs:simpleType>
-										<xs:restriction base="eCH-0261:unitType">
-											<xs:enumeration value="%"/>
-											<xs:enumeration value="kg/pc"/>
-											<xs:enumeration value="kg/kg"/>
-										</xs:restriction>
-									</xs:simpleType>
-								</xs:element>
-							</xs:sequence>
-						</xs:restriction>
-					</xs:complexContent>
+					<xs:sequence>
+						<xs:element name="measurements" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:restriction base="eCH-0263:measurementType">
+										<xs:sequence>
+											<xs:element name="value">
+												<xs:simpleType>
+													<xs:restriction base="xs:decimal"/>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="unit">
+												<xs:simpleType>
+													<xs:restriction base="eCH-0261:unitType">
+														<xs:enumeration value="%"/>
+														<xs:enumeration value="kg/pc"/>
+														<xs:enumeration value="kg/kg"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+										</xs:sequence>
+									</xs:restriction>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
