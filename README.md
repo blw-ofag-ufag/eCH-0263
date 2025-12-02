@@ -1,6 +1,7 @@
 # eCH-0263: Agrardaten -- Betriebsmittel
 
-This is the repository for technical artefacts related to this specification.
+This is the repository for technical artefacts related to this specification 0263. The currently valid version is published on the eCH-Website https://www.ech.ch/de/ech/ech-0263.
+
 Primarily, this repo contains:
 
 * XSDs
@@ -24,7 +25,7 @@ Additionally, they may:
 
 - Regular external developers are integrated into the organization as **“Outside Collaborator”** and receive by default the **Write** role on all eCH repositories.
 
-Membership and roles are managed by the CCDT members.
+Membership and roles are managed by the FOAG's Competence Center for Digital Transformation (CCDT) members.
 Memberships and roles can be given or removed as soon as needed. CCDT makes a regular check of active users and adapts the accesses as needed.
 
 ## Issue management
