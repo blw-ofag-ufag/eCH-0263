@@ -426,6 +426,11 @@
 								<xs:documentation xml:lang="de">Kraftfutter</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
+						<xs:enumeration value="MINERALFODDER">
+							<xs:annotation>
+								<xs:documentation xml:lang="de">Mineralfutter</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
