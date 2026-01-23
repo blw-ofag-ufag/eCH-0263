@@ -20,22 +20,27 @@
                 "Produkt Pflanzenschutzmittel"@de ;
     rdfs:comment """Dieses Element beschreibt ein Pflanzenschutzmittel mit den dazugehörigen Attributen."""@de .
 
-:id a owl:ObjectProperty;
-    rdfs:domain :PlantProtectionProduct ;
+:id a owl:ObjectProperty ;
     rdfs:label "identifier"@en, "Identifikator"@de ;
     rdfs:comment """Identifikator gemäss eCH-0261:identifierType"""@de ;
+    rdfs:domain [ 
+        a owl:Class ;
+        owl:unionOf (:PlantProtectionProduct :Ingredient)
+    ] ;
     rdfs:range ech261:IdentifierType .
 
-:alternateId a owl:ObjectProperty;
-    rdfs:domain :PlantProtectionProduct ;
+:alternateId a owl:ObjectProperty ;
     rdfs:label "alternate identifier"@en, "Alternativer Identifikator"@de ;
     rdfs:comment """Zusätzliche Identifikatoren (z.B. W-Nummer) gemäss eCH-0261:identifierType"""@de ;
     rdfs:range ech261:IdentifierType .
 
-:descriptor a owl:ObjectProperty;
-    rdfs:domain :PlantProtectionProduct ;
+:descriptor a owl:ObjectProperty ;
     rdfs:label "descriptor"@en, "Bezeichnung"@de ;
     rdfs:comment "Bezeichnung gemäss eCH-0261:descriptorType"@de ;
+        rdfs:domain [ 
+        a owl:Class ;
+        owl:unionOf (:PlantProtectionProduct :Ingredient)
+    ] ;
     rdfs:range ech261:DescriptorType .
 
 :usageCategory a owl:ObjectProperty;
@@ -52,7 +57,48 @@
     Gemässe eCH-0261:unitType"""@de ;
     rdfs:range ech261:UnitType .
 
-:hazardLabel a owl:ObjectProperty;
+:hazardLabel a owl:ObjectProperty ;
     rdfs:domain :PlantProtectionProduct ;
     rdfs:label "hazard label"@en, "Gefahrenkennzeichnung"@de ;
     rdfs:range skos:Concept .
+
+:Ingredient a owl:Class ;
+    rdfs:label "ingredient"@en, "Inhaltsstoff"@de ;
+    rdfs:comment """Diese Klasse beschreibt die Inhaltsstoffe und Zusammensetzungen mit den dazugehörigen Attributen. 
+    Unter 'Inhaltsstoff' wird allgemein ein Bestandteil eines Produkts verstanden. 
+    Klasse beschreibt genau eine Substanz/Wirkstoff/Nährstoff mit zugehöriger Konzentration oder Dichte"""@de .
+
+
+:ingredient a owl:ObjectProperty ;
+    rdfs:domain :PlantProtectionProduct ;
+    rdfs:label "ingredient"@en, "Inhaltsstoff" ;
+    rdfs:range :Ingredient .
+
+:substance a owl:ObjectProperty ;
+    rdfs:domain :Ingredient ;
+    rdfs:label "substance"@en, "Substanze"@de ;
+    rdfs:comment "substanceType is a class in the eCH-0263 standard."@en ;
+    rdfs:range skos:Concept . 
+
+:concentration a owl:ObjectProperty ;
+    rdfs:domain :Ingredient ;
+    rdfs:label "Concentration"@en, "Konzentration"@de  ;
+    rdfs:comment """Konzentration in kg/m3, falls «m3» als Transakti-onseinheit (transactionUnit) des übergeordneten Produkts angegeben wird. 
+    In diesem Fall muss die Konzentration zwingend angegeben werden""" ;
+    rdfs:range ech261:measurementType .
+
+:density a owl:ObjectProperty ;
+    rdfs:domain :Ingredient ;
+    rdfs:label "density"@en, "Dichte"@de ;
+    rdfs:comment """Dichte in kg/m3, falls «kg» als Transaktionseinheit (transactionUnit) des übergeordneten Produkts angegeben wird. 
+    In diesem Fall ist das Element optional.""" ;
+    rdfs:range ech261:measurementType .
+
+:quantity a owl:ObjectProperty ;
+    rdfs:domain :Ingredient ;
+    rdfs:label "quantity"@en, "Menge"@de ;
+    rdfs:comment """Menge mit zugehörender Einheit der verwendeten Substanz. 
+    Die Auswahl ist eingeschränkt auf die Möglichkeiten «%», «kg/m3» und «kg/Stück»."""@de ;
+    rdfs:range ech261:measurementType .
+
+
