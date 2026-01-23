@@ -1,0 +1,29 @@
+@prefix : <https://agriculture.ld.admin.ch/ech/0263/> .
+@prefix ech263: <https://agriculture.ld.admin.ch/ech/0263/> .
+@prefix ech261: <https://agriculture.ld.admin.ch/ech/0261/> . 
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+:UsageCategoryNonProfessional a skos:Concept ;
+    skos:inScheme :UsageCategory ;
+    skos:prefLabel  "non-professional"@en, "nicht-berufliche Verwendung"@de ;
+    skos:notation "NON_PROFESSIONAL" .
+
+:UsageCategoryProfessional a skos:Concept ;
+    skos:inScheme :UsageCategory ;
+    skos:prefLabel  "professional"@en, "berufliche Verwendung"@de ;
+    skos:notation "PROFESSIONAL" .
+
+:UsageCategoryBoth a skos:Concept ;
+    skos:inScheme :UsageCategory ;
+    skos:prefLabel  "both"@en, "beides"@de ;
+    skos:notation "BOTH" .
+
+:HazardLabel a skos:ConceptScheme ;
+    skos:prefLabel "hazard label"@en, "Gefahrenkennzeichnung"@de ;
+    dcterms:description "Liste der Gefahrenkennzeichnungen (In Erarbeitung)"@de .

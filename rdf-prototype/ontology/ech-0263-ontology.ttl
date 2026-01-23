@@ -14,3 +14,45 @@
     dcterms:description "Ontology defining agricultural inputs like fertilizers and feedstuff."@en ;
     dcterms:creator "Federal Office for Agriculture (FOAG)" ;
     owl:imports <https://agriculture.ld.admin.ch/ech/0261/> .
+
+:PlantProtectionProduct a owl:Class ;
+    rdfs:label "Plant Protection Product"@en,
+                "Produkt Pflanzenschutzmittel"@de ;
+    rdfs:comment """Dieses Element beschreibt ein Pflanzenschutzmittel mit den dazugehörigen Attributen."""@de .
+
+:id a owl:ObjectProperty;
+    rdfs:domain :PlantProtectionProduct ;
+    rdfs:label "identifier"@en, "Identifikator"@de ;
+    rdfs:comment """Identifikator gemäss eCH-0261:identifierType"""@de ;
+    rdfs:range ech261:IdentifierType .
+
+:alternateId a owl:ObjectProperty;
+    rdfs:domain :PlantProtectionProduct ;
+    rdfs:label "alternate identifier"@en, "Alternativer Identifikator"@de ;
+    rdfs:comment """Zusätzliche Identifikatoren (z.B. W-Nummer) gemäss eCH-0261:identifierType"""@de ;
+    rdfs:range ech261:IdentifierType .
+
+:descriptor a owl:ObjectProperty;
+    rdfs:domain :PlantProtectionProduct ;
+    rdfs:label "descriptor"@en, "Bezeichnung"@de ;
+    rdfs:comment "Bezeichnung gemäss eCH-0261:descriptorType"@de ;
+    rdfs:range ech261:DescriptorType .
+
+:usageCategory a owl:ObjectProperty;
+    rdfs:domain :PlantProtectionProduct ;
+    rdfs:label "approval category"@en, "Zulassungskategorie"@de ;
+    rdfs:range skos:Concept .
+
+:transactionUnit a owl:ObjectProperty;
+    rdfs:domain :PlantProtectionProduct ;
+    rdfs:label "transaction unit"@en, "Transaktionsgrösse"@de ;
+    rdfs:comment """
+    Einheit, welche bei Transaktionen dieses Pflan-zenschutzmittels verwendet wird. 
+    Die Auswahl ist eingeschränkt auf die Möglichkeiten «kg», «Kubik-meter» und «Stück».
+    Gemässe eCH-0261:unitType"""@de ;
+    rdfs:range ech261:UnitType .
+
+:hazardLabel a owl:ObjectProperty;
+    rdfs:domain :PlantProtectionProduct ;
+    rdfs:label "hazard label"@en, "Gefahrenkennzeichnung"@de ;
+    rdfs:range skos:Concept .
