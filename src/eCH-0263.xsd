@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:eCH-0263="http://www.ech.ch/xmlns/eCH-0263/1" xmlns:eCH-0010="http://www.ech.ch/xmlns/eCH-0010/8" xmlns:eCH-0108="http://www.ech.ch/xmlns/eCH-0108/7" xmlns:eCH-0261="http://www.ech.ch/xmlns/eCH-0261/1" targetNamespace="http://www.ech.ch/xmlns/eCH-0263/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:eCH-0263="http://www.ech.ch/xmlns/eCH-0263/1" xmlns:eCH-0010="http://www.ech.ch/xmlns/eCH-0010/8" xmlns:eCH-0108="http://www.ech.ch/xmlns/eCH-0108/7" xmlns:eCH-0261="http://www.ech.ch/xmlns/eCH-0261/1" targetNamespace="http://www.ech.ch/xmlns/eCH-0263/1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1.0">
 	<xs:annotation>
 		<xs:documentation xml:lang="de">Agrardaten - Betriebsmittel</xs:documentation>
 	</xs:annotation>
 	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0010/8" schemaLocation="http://www.ech.ch/xmlns/eCH-0010/8/eCH-0010-8-0.xsd"/>
 	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0108/7" schemaLocation="http://www.ech.ch/xmlns/eCH-0108/7/eCH-0108-7-0.xsd"/>
-	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0261/1" schemaLocation="http://www.ech.ch/xmlns/eCH-0261/1/eCH-0261-1-0.xsd"/>
+	<xs:import namespace="http://www.ech.ch/xmlns/eCH-0261/1" schemaLocation="http://www.ech.ch/xmlns/eCH-0261/1/eCH-0261.xsd"/>
 	<!--Hauptdatentypen-->
 	<xs:complexType name="plantProtectionProductType">
 		<xs:annotation>
@@ -426,6 +426,11 @@
 								<xs:documentation xml:lang="de">Kraftfutter</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
+						<xs:enumeration value="MINERALFODDER">
+							<xs:annotation>
+								<xs:documentation xml:lang="de">Mineralfutter</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -602,6 +607,11 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 					<xs:documentation xml:lang="de">Sorte</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="manufacturer" type="eCH-0108:localIdType">
+				<xs:annotation>
+					<xs:documentation xml:lang="de">BUR-Nummer des Herstellers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="validity" type="eCH-0261:validityType">
 				<xs:annotation>
 					<xs:documentation xml:lang="de">Angaben zur Gültigkeitsdauer</xs:documentation>
@@ -642,6 +652,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 										<xs:restriction base="eCH-0261:unitType">
 											<xs:enumeration value="%"/>
 											<xs:enumeration value="kg/pc"/>
+											<xs:enumeration value="kg/kg"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
@@ -854,6 +865,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 											<xs:enumeration value="%"/>
 											<xs:enumeration value="kg/m3"/>
 											<xs:enumeration value="kg/pc"/>
+											<xs:enumeration value="kg/kg"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
@@ -881,6 +893,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 											<xs:enumeration value="%"/>
 											<xs:enumeration value="kg/m3"/>
 											<xs:enumeration value="kg/pc"/>
+											<xs:enumeration value="kg/kg"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
@@ -908,6 +921,7 @@ Referenziert einen Code einer Spezies, welcher durch «zoologicalAnimal» aus eC
 											<xs:enumeration value="%"/>
 											<xs:enumeration value="kg/m3"/>
 											<xs:enumeration value="kg/pc"/>
+											<xs:enumeration value="kg/kg"/>
 										</xs:restriction>
 									</xs:simpleType>
 								</xs:element>
